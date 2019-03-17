@@ -65,6 +65,12 @@ android {
         experimental = true
     }
 
+    kotlin {
+        experimental {
+            coroutines 'enable'
+        }
+    }
+
     flavorDimensions "default"
 }
 
@@ -92,11 +98,15 @@ dependencies {
     implementation deps.rx.rxjava
     implementation deps.rx.rxandroid
 
+    implementation deps.coroutines.core
+    implementation deps.coroutines.android
+
     implementation deps.retrofit.retrofit
     implementation deps.retrofit.gson
     implementation deps.retrofit.adapter
     implementation deps.retrofit.okhttp
     implementation deps.retrofit.okhttp_logging
+    implementation deps.retrofit.coroutines_adapter
 
     implementation deps.glide.glide
     kapt deps.glide.complier
