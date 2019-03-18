@@ -24,13 +24,6 @@ data class Recipe(
     var title: String? = null,
     var des: String? = null,
     var time: Int = 30,
-    var serving: Int = 4,
+    var serving: Int = 4
 
-    @Embedded
-    @SerializedName("components")
-    var ingredients: List<Ingredient>? = null,
-
-    @Embedded
-    @SerializedName("cook_steps")
-    var cookSteps: List<Step>? = null
 ) : Parcelable

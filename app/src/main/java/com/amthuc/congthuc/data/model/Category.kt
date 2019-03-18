@@ -12,12 +12,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Entity(tableName = "category")
 @Parcelize
-data class Category(
+data class Category (
     @PrimaryKey
     @ColumnInfo(name = "id")
-    var id: Int,
-    var title: String? = null,
-    var source: String? = null,
-    var images: List<String>? = null,
-    var recipes: Int = 0
+    val id: Int,
+    val title: String? = null,
+    val source: String? = null,
+    val images: List<String>? = null,
+    val recipes: Int = 0
 ) : Parcelable
