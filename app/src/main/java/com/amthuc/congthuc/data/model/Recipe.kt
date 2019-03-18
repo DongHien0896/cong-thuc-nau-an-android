@@ -2,7 +2,6 @@ package com.amthuc.congthuc.data.model
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
-import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
@@ -24,6 +23,7 @@ data class Recipe(
     var title: String? = null,
     var des: String? = null,
     var time: Int = 30,
-    var serving: Int = 4
-
+    var serving: Int = 4,
+    @SerializedName("components") var ingredients: List<Ingredient>? = null,
+    @SerializedName("cook_steps") var cookSteps: List<Step>? = null
 ) : Parcelable

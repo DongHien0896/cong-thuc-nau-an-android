@@ -16,4 +16,6 @@ object Constants {
     const val REQUEST_CAMERA_READ_CONTACTS = 2001
 
     const val DATABASE_NAME = "DATABASE_NAME"
+
+    const val CATEGORIES_PATH = "data/category/categories.json"
 }

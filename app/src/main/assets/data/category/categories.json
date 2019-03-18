@@ -1,0 +1,252 @@
+[
+  {
+    "title": "Bánh mặn",
+    "source": "data/detail/banhman.json",
+    "recipes": 734,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/banhman_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/banhman_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/banhman_3"
+    ]
+  },
+  {
+    "title": "Bánh ngọt",
+    "source": "data/detail/banhngot.json",
+    "recipes": 2232,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/banhngot_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/banhngot_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/banhngot_3"
+    ]
+  },
+  {
+    "title": "Bún - Mì - Phở",
+    "source": "data/detail/bunmipho.json",
+    "recipes": 338,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/bunmipho_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/bunmipho_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/bunmipho_3"
+    ]
+  },
+  {
+    "title": "Canh",
+    "source": "data/detail/canh.json",
+    "recipes": 839,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/canh_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/canh_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/canh_3"
+    ]
+  },
+  {
+    "title": "Chay",
+    "source": "data/detail/chay.json",
+    "recipes": 424,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/chay_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/chay_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/chay_3"
+    ]
+  },
+  {
+    "title": "Chè",
+    "source": "data/detail/che.json",
+    "recipes": 589,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/che_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/che_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/che_3"
+    ]
+  },
+  {
+    "title": "Cocktail",
+    "source": "data/detail/cocktail.json",
+    "recipes": 128,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/cocktail_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/cocktail_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/cocktail_3"
+    ]
+  },
+  {
+    "title": "Cupcake",
+    "source": "data/detail/cupcake.json",
+    "recipes": 111,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/cupcake_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/cupcake_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/cupcake_3"
+    ]
+  },
+  {
+    "title": "Đồ uống",
+    "source": "data/detail/douong.json",
+    "recipes": 385,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/douong_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/douong_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/douong_3"
+    ]
+  },
+  {
+    "title": "Đồ sống",
+    "source": "data/detail/dosong.json",
+    "recipes": 37,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/dosong_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/dosong_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/dosong_3"
+    ]
+  },
+  {
+    "title": "Kem",
+    "source": "data/detail/kem.json",
+    "recipes": 499,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/kem_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/kem_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/kem_3"
+    ]
+  },
+  {
+    "title": "Lẩu",
+    "source": "data/detail/lau.json",
+    "recipes": 124,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/lau_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/lau_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/lau_3"
+    ]
+  },
+  {
+    "title": "Miến - Hủ tiếu",
+    "source": "data/detail/hutieu.json",
+    "recipes": 111,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/hutieu_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/hutieu_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/hutieu_3"
+    ]
+  },
+  {
+    "title": "Mứt",
+    "source": "data/detail/mut.json",
+    "recipes": 466,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/mut_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/mut_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/mut_3"
+    ]
+  },
+  {
+    "title": "Nem - chả",
+    "source": "data/detail/nemcha.json",
+    "recipes": 443,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nemcha_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nemcha_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nemcha_3"
+    ]
+  },
+  {
+    "title": "Nôm gỏi",
+    "source": "data/detail/nomgoi.json",
+    "recipes": 436,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nomgoi_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nomgoi_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nomgoi_3"
+    ]
+  },
+  {
+    "title": "Nước chấm",
+    "source": "data/detail/nuoccham.json",
+    "recipes": 177,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuoccham_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuoccham_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuoccham_3"
+    ]
+  },
+  {
+    "title": "Nước ép",
+    "source": "data/detail/nuocep.json",
+    "recipes": 141,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuocep_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuocep_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuocep_3"
+    ]
+  },
+  {
+    "title": "Nướng",
+    "source": "data/detail/nuong.json",
+    "recipes": 9,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuong_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuong_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/nuong_3"
+    ]
+  },
+  {
+    "title": "Pasta spaghetti",
+    "source": "data/detail/spaghetti.json",
+    "recipes": 174,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/spaghetti_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/spaghetti_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/spaghetti_3"
+    ]
+  },
+  {
+    "title": "Salad",
+    "source": "data/detail/salad.json",
+    "recipes": 421,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/salad_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/salad_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/salad_3"
+    ]
+  },
+  {
+    "title": "Sinh tố",
+    "source": "data/detail/sinhto.json",
+    "recipes": 349,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/sinhto_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/sinhto_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/sinhto_3"
+    ]
+  },
+  {
+    "title": "Snack",
+    "source": "data/detail/snack.json",
+    "recipes": 177,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/snack_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/snack_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/snack_3"
+    ]
+  },
+  {
+    "title": "Soup cháo",
+    "source": "data/detail/soupchao.json",
+    "recipes": 401,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/soup_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/soup_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/soup_3"
+    ]
+  },
+  {
+    "title": "Xôi",
+    "source": "data/detail/xoi.json",
+    "recipes": 300,
+    "images": [
+      "android.resource://com.amthuc.nauan.congthuc/drawable/xoi_1",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/xoi_2",
+      "android.resource://com.amthuc.nauan.congthuc/drawable/xoi_3"
+    ]
+  }
+]

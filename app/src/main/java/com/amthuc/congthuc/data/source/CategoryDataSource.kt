@@ -2,7 +2,6 @@ package com.amthuc.congthuc.data.source
 
 import androidx.lifecycle.LiveData
 import com.amthuc.congthuc.data.model.Category
-import io.reactivex.Completable
 
 interface CategoryDataSource {
 
@@ -11,13 +10,13 @@ interface CategoryDataSource {
      */
     interface Local {
 
-        fun insert(category: Category): Completable
+        fun insert(category: Category)
 
-        fun insert(categories: List<Category>): Completable
+        fun insert(categories: List<Category>)
 
-        fun update(category: Category): Completable
+        fun update(category: Category)
 
-        fun delete(category: Category): Completable
+        fun delete(category: Category)
 
         fun getCategories(): LiveData<List<Category>>
     }
