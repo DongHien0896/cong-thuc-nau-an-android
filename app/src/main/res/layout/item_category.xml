@@ -5,7 +5,7 @@
 
         <variable
             name="item"
-            type="com.amthuc.congthuc.ui.base.BaseViewModel" />
+            type="com.amthuc.congthuc.data.model.CookStep" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
