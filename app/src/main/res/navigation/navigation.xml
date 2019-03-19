@@ -3,11 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/categoriesFragment">
+    app:startDestination="@id/categories_dest">
 
     <fragment
-        android:id="@+id/categoriesFragment"
+        android:id="@+id/categories_dest"
         android:name="com.amthuc.congthuc.ui.screen.categories.CategoriesFragment"
         android:label="Categories"
-        tools:layout="@layout/fragment_categories" />
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categories_dest_to_recipe_dest"
+            app:destination="@id/recipe_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipe_dest"
+        android:name="com.amthuc.congthuc.ui.screen.recipe.RecipeFragment"
+        android:label="{ARGUMENT_TITLE}"
+        tools:layout="@layout/fragment_recipe">
+        <argument
+            android:name="ARGUMENT_CATEGORY"
+            app:argType="com.amthuc.congthuc.data.model.Category" />
+        <argument
+            android:name="ARGUMENT_TITLE"
+            android:defaultValue="Recipes"
+            app:argType="string" />
+    </fragment>
 </navigation>

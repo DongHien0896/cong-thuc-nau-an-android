@@ -1,12 +1,15 @@
 package com.amthuc.congthuc.ui.screen.categories
 
 import android.os.Bundle
+import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.amthuc.congthuc.R
 import com.amthuc.congthuc.data.model.Category
 import com.amthuc.congthuc.databinding.FragmentCategoriesBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
+import com.amthuc.congthuc.ui.screen.recipe.RecipeFragment
 import com.amthuc.congthuc.ui.widgets.SpacesItemDecoration
 import com.amthuc.congthuc.utils.Constants
 import kotlinx.android.synthetic.main.fragment_categories.*
@@ -38,6 +41,12 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding, CategoriesVie
     }
 
     private fun openCategoryDetail(category: Category) {
-
+        findNavController().navigate(
+            R.id.recipe_dest,
+            bundleOf(
+                RecipeFragment.ARGUMENT_CATEGORY to category,
+                RecipeFragment.ARGUMENT_TITLE to category.title
+            )
+        )
     }
 }
