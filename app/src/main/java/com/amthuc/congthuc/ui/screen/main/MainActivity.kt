@@ -5,13 +5,16 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.amthuc.congthuc.R
+import com.amthuc.congthuc.data.model.Category
 import com.amthuc.congthuc.databinding.ActivityMainBinding
 import com.amthuc.congthuc.ui.base.BaseActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
@@ -26,9 +29,30 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         super.onCreate(savedInstanceState)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+        val adapter = CategoryDrawerAdapter(::openCategoryDetail)
+
+        setSupportActionBar(toolbar)
+        setupDrawer(toolbar, drawerLayout)
+        setupActionBar()
+        setupRecyclerCategoryDrawer(adapter)
+
+        viewModel.categories.observe(this, Observer {
+            adapter.submitList(it)
+        })
+        viewModel.fillDb()
+    }
+
+    private fun setupActionBar() {
+        val host: NavHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
+                ?: return
+        val navController = host.navController
+        appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+
+    private fun setupDrawer(toolbar: Toolbar, drawerLayout: DrawerLayout) {
         val toggle = ActionBarDrawerToggle(
             this,
             drawerLayout,
@@ -38,24 +62,22 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-
-        val host: NavHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment?
-                ?: return
-        val navController = host.navController
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBar(navController, appBarConfiguration)
-
-        viewModel.categories.observe(this, Observer {
-
-        })
-        viewModel.fillDb()
     }
 
-    private fun setupActionBar(
-        navController: NavController,
-        appBarConfiguration: AppBarConfiguration
-    ) {
-        setupActionBarWithNavController(navController, appBarConfiguration)
+    private fun setupRecyclerCategoryDrawer(adapter: CategoryDrawerAdapter) {
+        recycler_category_drawer.apply {
+            layoutManager = LinearLayoutManager(this@MainActivity)
+            addItemDecoration(
+                DividerItemDecoration(
+                    this@MainActivity,
+                    DividerItemDecoration.VERTICAL
+                )
+            )
+            this.adapter = adapter
+        }
+    }
+
+    private fun openCategoryDetail(category: Category) {
+
     }
 }
