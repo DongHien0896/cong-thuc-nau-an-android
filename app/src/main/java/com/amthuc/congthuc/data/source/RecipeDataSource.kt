@@ -1,8 +1,7 @@
 package com.amthuc.congthuc.data.source
 
-import androidx.lifecycle.LiveData
 import com.amthuc.congthuc.data.model.Recipe
-import io.reactivex.Completable
+import io.reactivex.Single
 
 /**
  *   Created by quangnv on 25/01/2019
@@ -23,10 +22,12 @@ interface RecipeDataSource {
 
         fun delete(recipe: Recipe)
 
-        fun getRecipes(): LiveData<List<Recipe>>
+        fun getRecipes(): Single<List<Recipe>>
 
-        fun searchRecipes(q: String): LiveData<List<Recipe>>
+        fun searchRecipes(q: String): Single<List<Recipe>>
 
-        fun getRecipe(id: String): LiveData<Recipe>
+        fun getRecipe(id: Int): Single<Recipe>
+
+        fun getRecipesByCategory(idCategory: Int): Single<List<Recipe>>
     }
 }

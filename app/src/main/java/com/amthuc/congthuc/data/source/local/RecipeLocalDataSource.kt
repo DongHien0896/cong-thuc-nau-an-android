@@ -1,9 +1,9 @@
 package com.amthuc.congthuc.data.source.local
 
-import androidx.lifecycle.LiveData
 import com.amthuc.congthuc.data.model.Recipe
 import com.amthuc.congthuc.data.source.RecipeDataSource
 import com.amthuc.congthuc.data.source.local.sqlite.RecipeDao
+import io.reactivex.Single
 
 class RecipeLocalDataSource(private val dao: RecipeDao) : RecipeDataSource.Local {
 
@@ -15,9 +15,12 @@ class RecipeLocalDataSource(private val dao: RecipeDao) : RecipeDataSource.Local
 
     override fun delete(recipe: Recipe) = dao.delete(recipe)
 
-    override fun getRecipes(): LiveData<List<Recipe>> = dao.getRecipes()
+    override fun getRecipes(): Single<List<Recipe>> = dao.getRecipes()
 
-    override fun searchRecipes(q: String): LiveData<List<Recipe>> = dao.searchRecipes(q)
+    override fun searchRecipes(q: String): Single<List<Recipe>> = dao.searchRecipes(q)
 
-    override fun getRecipe(id: String): LiveData<Recipe> = dao.getRecipe(id)
+    override fun getRecipe(id: Int): Single<Recipe> = dao.getRecipe(id)
+
+    override fun getRecipesByCategory(idCategory: Int): Single<List<Recipe>> =
+        dao.getRecipesByCategory(idCategory)
 }

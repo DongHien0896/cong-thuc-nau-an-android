@@ -1,5 +1,6 @@
 [
   {
+    "id": 1,
     "title": "Bánh mặn",
     "source": "data/detail/banhman.json",
     "recipes": 734,
@@ -10,6 +11,7 @@
     ]
   },
   {
+    "id": 2,
     "title": "Bánh ngọt",
     "source": "data/detail/banhngot.json",
     "recipes": 2232,
@@ -20,6 +22,7 @@
     ]
   },
   {
+    "id": 3,
     "title": "Bún - Mì - Phở",
     "source": "data/detail/bunmipho.json",
     "recipes": 338,
@@ -30,6 +33,7 @@
     ]
   },
   {
+    "id": 4,
     "title": "Canh",
     "source": "data/detail/canh.json",
     "recipes": 839,
@@ -40,6 +44,7 @@
     ]
   },
   {
+    "id": 5,
     "title": "Chay",
     "source": "data/detail/chay.json",
     "recipes": 424,
@@ -50,6 +55,7 @@
     ]
   },
   {
+    "id": 6,
     "title": "Chè",
     "source": "data/detail/che.json",
     "recipes": 589,
@@ -60,6 +66,7 @@
     ]
   },
   {
+    "id": 7,
     "title": "Cocktail",
     "source": "data/detail/cocktail.json",
     "recipes": 128,
@@ -70,6 +77,7 @@
     ]
   },
   {
+    "id": 8,
     "title": "Cupcake",
     "source": "data/detail/cupcake.json",
     "recipes": 111,
@@ -80,6 +88,7 @@
     ]
   },
   {
+    "id": 9,
     "title": "Đồ uống",
     "source": "data/detail/douong.json",
     "recipes": 385,
@@ -90,6 +99,7 @@
     ]
   },
   {
+    "id": 10,
     "title": "Đồ sống",
     "source": "data/detail/dosong.json",
     "recipes": 37,
@@ -100,6 +110,7 @@
     ]
   },
   {
+    "id": 11,
     "title": "Kem",
     "source": "data/detail/kem.json",
     "recipes": 499,
@@ -110,6 +121,7 @@
     ]
   },
   {
+    "id": 12,
     "title": "Lẩu",
     "source": "data/detail/lau.json",
     "recipes": 124,
@@ -120,6 +132,7 @@
     ]
   },
   {
+    "id": 13,
     "title": "Miến - Hủ tiếu",
     "source": "data/detail/hutieu.json",
     "recipes": 111,
@@ -130,6 +143,7 @@
     ]
   },
   {
+    "id": 14,
     "title": "Mứt",
     "source": "data/detail/mut.json",
     "recipes": 466,
@@ -140,6 +154,7 @@
     ]
   },
   {
+    "id": 15,
     "title": "Nem - chả",
     "source": "data/detail/nemcha.json",
     "recipes": 443,
@@ -150,6 +165,7 @@
     ]
   },
   {
+    "id": 16,
     "title": "Nôm gỏi",
     "source": "data/detail/nomgoi.json",
     "recipes": 436,
@@ -160,6 +176,7 @@
     ]
   },
   {
+    "id": 17,
     "title": "Nước chấm",
     "source": "data/detail/nuoccham.json",
     "recipes": 177,
@@ -170,6 +187,7 @@
     ]
   },
   {
+    "id": 18,
     "title": "Nước ép",
     "source": "data/detail/nuocep.json",
     "recipes": 141,
@@ -180,6 +198,7 @@
     ]
   },
   {
+    "id": 19,
     "title": "Nướng",
     "source": "data/detail/nuong.json",
     "recipes": 9,
@@ -190,6 +209,7 @@
     ]
   },
   {
+    "id": 20,
     "title": "Pasta spaghetti",
     "source": "data/detail/spaghetti.json",
     "recipes": 174,
@@ -200,6 +220,7 @@
     ]
   },
   {
+    "id": 21,
     "title": "Salad",
     "source": "data/detail/salad.json",
     "recipes": 421,
@@ -210,6 +231,7 @@
     ]
   },
   {
+    "id": 22,
     "title": "Sinh tố",
     "source": "data/detail/sinhto.json",
     "recipes": 349,
@@ -220,6 +242,7 @@
     ]
   },
   {
+    "id": 23,
     "title": "Snack",
     "source": "data/detail/snack.json",
     "recipes": 177,
@@ -230,6 +253,7 @@
     ]
   },
   {
+    "id": 24,
     "title": "Soup cháo",
     "source": "data/detail/soupchao.json",
     "recipes": 401,
@@ -240,6 +264,7 @@
     ]
   },
   {
+    "id": 25,
     "title": "Xôi",
     "source": "data/detail/xoi.json",
     "recipes": 300,

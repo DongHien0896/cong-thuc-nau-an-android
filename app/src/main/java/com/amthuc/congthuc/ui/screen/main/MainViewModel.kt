@@ -42,6 +42,9 @@ class MainViewModel(
                         data,
                         object : TypeToken<List<Recipe>>() {}.type
                     )
+                    for (recipe in recipes) {
+                        recipe.idCategory = category.id
+                    }
                     recipeRepository.insert(recipes)
                 }
             }

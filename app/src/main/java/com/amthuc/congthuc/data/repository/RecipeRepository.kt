@@ -1,8 +1,8 @@
 package com.amthuc.congthuc.data.repository
 
-import androidx.lifecycle.LiveData
 import com.amthuc.congthuc.data.model.Recipe
 import com.amthuc.congthuc.data.source.RecipeDataSource
+import io.reactivex.Single
 
 class RecipeRepository(private val local: RecipeDataSource.Local) : RecipeDataSource.Local {
 
@@ -14,9 +14,12 @@ class RecipeRepository(private val local: RecipeDataSource.Local) : RecipeDataSo
 
     override fun delete(recipe: Recipe) = local.delete(recipe)
 
-    override fun getRecipes(): LiveData<List<Recipe>> = local.getRecipes()
+    override fun getRecipes(): Single<List<Recipe>> = local.getRecipes()
 
-    override fun searchRecipes(q: String): LiveData<List<Recipe>> = local.searchRecipes(q)
+    override fun searchRecipes(q: String): Single<List<Recipe>> = local.searchRecipes(q)
 
-    override fun getRecipe(id: String): LiveData<Recipe> = local.getRecipe(id)
+    override fun getRecipe(id: Int): Single<Recipe> = local.getRecipe(id)
+
+    override fun getRecipesByCategory(idCategory: Int): Single<List<Recipe>> =
+        local.getRecipesByCategory(idCategory)
 }

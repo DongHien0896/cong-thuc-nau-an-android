@@ -17,6 +17,7 @@ data class Recipe(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
     var id: Int,
+    var idCategory: Int,
     var name: String? = null,
     var img: String? = null,
     var level: String? = null,

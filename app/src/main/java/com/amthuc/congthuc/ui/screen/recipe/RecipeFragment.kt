@@ -34,6 +34,7 @@ class RecipeFragment : BaseFragment<FragmentRecipeBinding, RecipeViewModel>() {
         viewModel.recipes.observe(viewLifecycleOwner, Observer {
             adapter.submitList(it)
         })
+        viewModel.getRecipesByCategory(category.id)
     }
 
     private fun setupRecyclerRecipe(adapter: RecipeAdapter) {
