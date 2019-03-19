@@ -11,6 +11,10 @@ object Constants {
     const val THRESHOLD_CLICK_TIME = 1000
     const val MIN_PASSWORD_LENGTH = 8
 
+    const val GRID_RECYCLER_CATEGORY = 2
+    const val RADIUS_CATEGORY_IMAGE = 16
+    const val SPACE_CATEGORY = 4F
+
     // request permission code
     const val REQUEST_READ_CONTACTS = 2000
     const val REQUEST_CAMERA_READ_CONTACTS = 2001

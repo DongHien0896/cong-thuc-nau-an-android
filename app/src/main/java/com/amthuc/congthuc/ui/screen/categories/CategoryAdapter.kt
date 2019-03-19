@@ -1,23 +1,22 @@
-package com.amthuc.congthuc.ui.screen.main
+package com.amthuc.congthuc.ui.screen.categories
 
 import androidx.recyclerview.widget.DiffUtil
 import com.amthuc.congthuc.R
 import com.amthuc.congthuc.data.model.Category
-import com.amthuc.congthuc.databinding.ItemCategoryDrawerBinding
+import com.amthuc.congthuc.databinding.ItemCategoryBinding
 import com.amthuc.congthuc.ui.base.BaseRecyclerAdapter
 
-class CategoryDrawerAdapter(private val listener: (Category) -> Unit) :
-    BaseRecyclerAdapter<Category, ItemCategoryDrawerBinding>(object :
-        DiffUtil.ItemCallback<Category>() {
+class CategoryAdapter(private val listener: (Category) -> Unit) :
+    BaseRecyclerAdapter<Category, ItemCategoryBinding>(object : DiffUtil.ItemCallback<Category>() {
         override fun areItemsTheSame(oldItem: Category, newItem: Category): Boolean =
             oldItem.id == newItem.id
 
         override fun areContentsTheSame(oldItem: Category, newItem: Category): Boolean =
             oldItem == newItem
     }) {
-    override fun getLayoutRes(viewType: Int): Int = R.layout.item_category_drawer
+    override fun getLayoutRes(viewType: Int): Int = R.layout.item_category
 
-    override fun bindFirstTime(binding: ItemCategoryDrawerBinding) {
+    override fun bindFirstTime(binding: ItemCategoryBinding) {
         binding.apply {
             root.setOnClickListener {
                 item?.apply {

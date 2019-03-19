@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.amthuc.congthuc.BuildConfig
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 
 @BindingAdapter("onRefreshListener")
 fun SwipeRefreshLayout.customRefreshListener(listener: SwipeRefreshLayout.OnRefreshListener?) {
@@ -36,6 +38,14 @@ fun RecyclerView.customScrollListener(listener: RecyclerView.OnScrollListener?) 
 fun ImageView.setGlideUrl(url: String?) {
     Glide.with(context)
         .load(url)
+        .into(this)
+}
+
+@BindingAdapter("glideUrlCrop")
+fun ImageView.setImageUrlCrop(url: String?) {
+    Glide.with(context)
+        .load(url)
+        .apply(RequestOptions.bitmapTransform(RoundedCorners(Constants.RADIUS_CATEGORY_IMAGE)))
         .into(this)
 }
 

@@ -1,11 +1,15 @@
 package com.amthuc.congthuc.ui.screen.categories
 
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import com.amthuc.congthuc.R
+import com.amthuc.congthuc.data.model.Category
 import com.amthuc.congthuc.databinding.FragmentCategoriesBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
+import com.amthuc.congthuc.ui.widgets.SpacesItemDecoration
+import com.amthuc.congthuc.utils.Constants
+import kotlinx.android.synthetic.main.fragment_categories.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CategoriesFragment : BaseFragment<FragmentCategoriesBinding, CategoriesViewModel>() {
@@ -17,8 +21,23 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding, CategoriesVie
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+        val adapter = CategoryAdapter(::openCategoryDetail)
+        setupRecyclerCategory(adapter)
+
         viewModel.categories.observe(viewLifecycleOwner, Observer {
-            Log.d("test_fragment", it.size.toString())
+            adapter.submitList(it)
         })
+    }
+
+    private fun setupRecyclerCategory(adapter: CategoryAdapter) {
+        recycler_category.apply {
+            layoutManager = GridLayoutManager(context, Constants.GRID_RECYCLER_CATEGORY)
+            addItemDecoration(SpacesItemDecoration(context))
+            this.adapter = adapter
+        }
+    }
+
+    private fun openCategoryDetail(category: Category) {
+
     }
 }
