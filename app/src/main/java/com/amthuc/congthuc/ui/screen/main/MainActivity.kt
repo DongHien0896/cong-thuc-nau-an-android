@@ -1,7 +1,6 @@
 package com.amthuc.congthuc.ui.screen.main
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -48,8 +47,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         setupActionBar(navController, appBarConfiguration)
 
         viewModel.categories.observe(this, Observer {
-            Log.d("testttt", it.size.toString())
+
         })
+        viewModel.fillDb()
     }
 
     private fun setupActionBar(
