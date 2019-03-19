@@ -15,13 +15,13 @@ interface RecipeDataSource {
      */
     interface Local {
 
-        fun insert(recipe: Recipe): Completable
+        fun insert(recipe: Recipe)
 
-        fun insert(recipes: List<Recipe>): Completable
+        fun insert(recipes: List<Recipe>)
 
-        fun update(recipe: Recipe): Completable
+        fun update(recipe: Recipe)
 
-        fun delete(recipe: Recipe): Completable
+        fun delete(recipe: Recipe)
 
         fun getRecipes(): LiveData<List<Recipe>>
 

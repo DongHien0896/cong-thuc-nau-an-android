@@ -30,13 +30,16 @@ fun createDatabase(context: Context): AppDatabase =
 
 private fun fillDb(context: Context) {
     ioThread {
+        val database = createDatabase(context)
+
         var data = read(context, Constants.CATEGORIES_PATH)
         val gson = Gson()
         val categories: List<Category> = gson.fromJson<List<Category>>(
             data,
             object : TypeToken<List<Category>>() {}.type
         )
-        createDatabase(context).categoryDao().insert(categories)
+
+        database.categoryDao().insert(categories)
 
         for (category in categories) {
             category.source?.apply {
@@ -45,7 +48,7 @@ private fun fillDb(context: Context) {
                     data,
                     object : TypeToken<List<Recipe>>() {}.type
                 )
-                createDatabase(context).recipeDao().insert(recipes)
+                database.recipeDao().insert(recipes)
             }
         }
     }

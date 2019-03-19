@@ -95,6 +95,8 @@ dependencies {
     implementation deps.koin.koin_scope
     implementation deps.koin.koin_viewmodel
 
+    kapt deps.databinding.complier
+
     implementation deps.room.room
     implementation deps.room.rxjava
     kapt deps.room.complier

@@ -14,16 +14,15 @@ import kotlinx.android.parcel.Parcelize
 @Entity(tableName = "recipe")
 @Parcelize
 data class Recipe(
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: String,
+    var id: Int,
     var name: String? = null,
     var img: String? = null,
     var level: String? = null,
-    var title: String? = null,
     var des: String? = null,
     var time: Int = 30,
     var serving: Int = 4,
     @SerializedName("components") var ingredients: List<Ingredient>? = null,
-    @SerializedName("cook_steps") var cookSteps: List<Step>? = null
+    @SerializedName("cook_steps") var steps: List<Step>? = null
 ) : Parcelable

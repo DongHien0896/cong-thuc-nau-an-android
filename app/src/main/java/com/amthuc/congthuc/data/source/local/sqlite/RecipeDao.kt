@@ -3,22 +3,21 @@ package com.amthuc.congthuc.data.source.local.sqlite
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.amthuc.congthuc.data.model.Recipe
-import io.reactivex.Completable
 
 @Dao
 interface RecipeDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(recipe: Recipe): Completable
+    fun insert(recipe: Recipe)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(recipes: List<Recipe>): Completable
+    fun insert(recipes: List<Recipe>)
 
     @Delete
-    fun delete(recipe: Recipe): Completable
+    fun delete(recipe: Recipe)
 
     @Update
-    fun update(recipe: Recipe): Completable
+    fun update(recipe: Recipe)
 
     @Query("SELECT * FROM recipe")
     fun getRecipes(): LiveData<List<Recipe>>

@@ -9,7 +9,6 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class Ingredient(
-    var id: String,
     var name: String? = null,
     var quantity: String? = null,
     var unit: String? = null
