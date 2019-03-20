@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.amthuc.congthuc.ui.screen.detail.RecipeDetailViewModel" />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/buttonClock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@null"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/dp_8"
+                android:src="@drawable/ic_access_alarm_black_24dp"
+                android:tint="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/textTime"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text='@{String.valueOf(viewModel.recipe.time) + " phút"}'
+                android:textColor="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonService"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonClock"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/buttonService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="8dp"
+                android:background="@null"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/dp_8"
+                android:src="@drawable/ic_group_black_24dp"
+                android:tint="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/textService"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textTime"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text='@{String.valueOf(viewModel.recipe.serving) + " người"}'
+                android:textColor="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/buttonIngredient"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonService"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/buttonIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_16"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="8dp"
+                android:background="@null"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/dp_8"
+                android:src="@drawable/ic_list_black_24dp"
+                android:tint="@color/colorAccent"
+                app:layout_constraintEnd_toStartOf="@+id/textIngredient"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textService"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text='@{String.valueOf(viewModel.recipe.ingredients.size()) + " nguyên liệu"}'
+                android:textColor="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/buttonIngredient"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/iamgeRecipe"
+                glideUrl="@{viewModel.recipe.img}"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/dp_240"
+                android:contentDescription="@string/app_name"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/buttonService" />
+
+            <TextView
+                android:id="@+id/textIngredient2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/color_gray_50_300"
+                android:padding="@dimen/dp_8"
+                android:text='@{"Nguyên liệu (" + String.valueOf(viewModel.recipe.ingredients.size()) + ")"}'
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iamgeRecipe" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_ingredient"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textIngredient2"
+                tools:listitem="@layout/item_ingredient" />
+
+            <TextView
+                android:id="@+id/textCookStep"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/color_gray_50_300"
+                android:padding="@dimen/dp_8"
+                android:text='@{"Bước làm (" + String.valueOf(viewModel.recipe.steps.size()) + ")"}'
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recycler_ingredient" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_step"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textCookStep"
+                tools:listitem="@layout/item_step" />
+
+            <ImageButton
+                android:id="@+id/buttonFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_circle_transparent"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/dp_8"
+                android:src="@drawable/ic_favorite_border_black_24dp"
+                android:tint="@android:color/white"
+                app:layout_constraintBottom_toTopOf="@+id/textIngredient2"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

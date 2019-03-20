@@ -26,5 +26,21 @@
             android:name="ARGUMENT_TITLE"
             android:defaultValue="Recipes"
             app:argType="string" />
+        <action
+            android:id="@+id/action_recipe_dest_to_recipe_detail_dest"
+            app:destination="@id/recipe_detail_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipe_detail_dest"
+        android:name="com.amthuc.congthuc.ui.screen.detail.RecipeDetailFragment"
+        android:label="{ARGUMENT_TITLE}"
+        tools:layout="@layout/fragment_recipe_detail">
+        <argument
+            android:name="ARGUMENT_RECIPE"
+            app:argType="com.amthuc.congthuc.data.model.Recipe" />
+        <argument
+            android:name="ARGUMENT_TITLE"
+            android:defaultValue="Detail"
+            app:argType="string" />
     </fragment>
 </navigation>
