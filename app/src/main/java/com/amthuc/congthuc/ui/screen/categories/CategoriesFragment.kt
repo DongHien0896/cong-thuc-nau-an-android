@@ -12,6 +12,7 @@ import com.amthuc.congthuc.ui.base.BaseFragment
 import com.amthuc.congthuc.ui.screen.recipe.RecipeFragment
 import com.amthuc.congthuc.ui.widgets.SpacesItemDecoration
 import com.amthuc.congthuc.utils.Constants
+import com.amthuc.congthuc.utils.createNavOptions
 import kotlinx.android.synthetic.main.fragment_categories.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -46,7 +47,8 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding, CategoriesVie
             bundleOf(
                 RecipeFragment.ARGUMENT_CATEGORY to category,
                 RecipeFragment.ARGUMENT_TITLE to category.title
-            )
+            ),
+            createNavOptions()
         )
     }
 }

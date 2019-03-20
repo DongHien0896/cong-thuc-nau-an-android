@@ -11,6 +11,7 @@ import com.amthuc.congthuc.databinding.FragmentFavoriteBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
 import com.amthuc.congthuc.ui.screen.detail.RecipeDetailFragment
 import com.amthuc.congthuc.ui.screen.recipe.RecipeAdapter
+import com.amthuc.congthuc.utils.createNavOptions
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -38,10 +39,12 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
 
     private fun openRecipeDetail(recipe: Recipe) {
         findNavController().navigate(
-            R.id.recipe_detail_dest, bundleOf(
+            R.id.recipe_detail_dest,
+            bundleOf(
                 RecipeDetailFragment.ARGUMENT_RECIPE to recipe,
                 RecipeDetailFragment.ARGUMENT_TITLE to recipe.name
-            )
+            ),
+            createNavOptions()
         )
     }
 }

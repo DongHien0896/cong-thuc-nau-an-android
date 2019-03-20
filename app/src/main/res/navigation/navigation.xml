@@ -56,7 +56,7 @@
         android:id="@+id/search_dest"
         android:name="com.amthuc.congthuc.ui.screen.search.SearchFragment"
         android:label="Search"
-        tools:layout="@layout/fragment_search" >
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_search_dest_to_recipe_detail_dest"
             app:destination="@id/recipe_detail_dest" />
