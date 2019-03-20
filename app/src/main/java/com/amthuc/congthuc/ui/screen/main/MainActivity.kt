@@ -35,7 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         super.onCreate(savedInstanceState)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
-        drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
+        drawerLayout = findViewById(R.id.drawer_layout)
         val adapter = CategoryDrawerAdapter(::openCategoryDetail)
 
         setSupportActionBar(toolbar)
@@ -45,6 +45,11 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
         findViewById<View>(R.id.nav_favorite).setOnClickListener {
             findNavController(R.id.nav_host_fragment).navigate(R.id.favorite_dest)
+            drawerLayout.closeDrawers()
+        }
+
+        findViewById<View>(R.id.nav_search).setOnClickListener {
+            findNavController(R.id.nav_host_fragment).navigate(R.id.search_dest)
             drawerLayout.closeDrawers()
         }
 

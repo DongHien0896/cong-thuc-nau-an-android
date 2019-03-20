@@ -47,9 +47,18 @@
         android:id="@+id/favorite_dest"
         android:name="com.amthuc.congthuc.ui.screen.favorite.FavoriteFragment"
         android:label="Favorite"
-        tools:layout="@layout/fragment_favorite" >
+        tools:layout="@layout/fragment_favorite">
         <action
             android:id="@+id/action_favorite_dest_to_recipe_detail_dest"
+            app:destination="@id/recipe_detail_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/search_dest"
+        android:name="com.amthuc.congthuc.ui.screen.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_search_dest_to_recipe_detail_dest"
             app:destination="@id/recipe_detail_dest" />
     </fragment>
 </navigation>

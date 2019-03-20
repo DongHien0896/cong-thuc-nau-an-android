@@ -1,6 +1,7 @@
 package com.amthuc.congthuc.ui.screen.main
 
 import android.app.Application
+import androidx.lifecycle.MutableLiveData
 import com.amthuc.congthuc.data.model.Category
 import com.amthuc.congthuc.data.model.Recipe
 import com.amthuc.congthuc.data.repository.CategoryRepository
@@ -22,6 +23,7 @@ class MainViewModel(
 ) : BaseViewModel() {
 
     val categories = categoryRepository.getCategories()
+    val isShowToolbar: MutableLiveData<Boolean> = MutableLiveData(true)
 
     fun fillDb() {
         if (prefsApi.get(SharedPrefKeys.PREF_FIRST_FILL_DB, Boolean::class.java) == true) return

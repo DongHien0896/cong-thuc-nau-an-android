@@ -4,9 +4,11 @@
     <color name="colorPrimaryDark">#A23836</color>
     <color name="colorAccent">#36A259</color>
 
-    <color name="color_gray_50_200">#E8EAF6</color>
-    <color name="color_gray_50_300">#E0E0E0</color>
-    <color name="color_gray_50_400">#BDBDBD</color>
+    <color name="color_gray_200">#E8EAF6</color>
+    <color name="color_gray_300">#E0E0E0</color>
+    <color name="color_gray_400">#BDBDBD</color>
+    <color name="color_gray_500">#9E9E9E</color>
+    <color name="color_gray_600">#757575</color>
 
     <color name="color_transparent_40">#66000000</color>
     <color name="color_transparent_48">#7A000000</color>

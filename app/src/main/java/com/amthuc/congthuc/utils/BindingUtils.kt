@@ -7,6 +7,7 @@ import android.os.SystemClock
 import android.text.TextUtils
 import android.view.View
 import android.webkit.WebView
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.DrawableRes
@@ -121,4 +122,9 @@ fun ImageView?.customTint(color: Int?) {
 fun View?.customBackground(color: Int?) {
     if (this == null || color == null) return
     setBackgroundColor(color)
+}
+
+@BindingAdapter("onEditorActionListener")
+fun TextView.onEditorAction(listener: TextView.OnEditorActionListener) {
+    setOnEditorActionListener(listener)
 }

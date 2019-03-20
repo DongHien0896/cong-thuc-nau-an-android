@@ -119,7 +119,7 @@
                 android:id="@+id/textIngredient2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@color/color_gray_50_300"
+                android:background="@color/color_gray_300"
                 android:padding="@dimen/dp_8"
                 android:text='@{"Nguyên liệu (" + String.valueOf(viewModel.recipe.ingredients.size()) + ")"}'
                 android:textAllCaps="true"
@@ -140,7 +140,7 @@
                 android:id="@+id/textCookStep"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@color/color_gray_50_300"
+                android:background="@color/color_gray_300"
                 android:padding="@dimen/dp_8"
                 android:text='@{"Bước làm (" + String.valueOf(viewModel.recipe.steps.size()) + ")"}'
                 android:textAllCaps="true"
