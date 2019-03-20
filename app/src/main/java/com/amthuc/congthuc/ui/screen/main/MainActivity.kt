@@ -5,6 +5,7 @@ import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.os.bundleOf
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
@@ -45,18 +46,26 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
         findViewById<View>(R.id.nav_favorite).setOnClickListener {
             findNavController(R.id.nav_host_fragment).navigate(R.id.favorite_dest)
-            drawerLayout.closeDrawers()
+            drawerLayout.closeDrawer(GravityCompat.START)
         }
 
         findViewById<View>(R.id.nav_search).setOnClickListener {
             findNavController(R.id.nav_host_fragment).navigate(R.id.search_dest)
-            drawerLayout.closeDrawers()
+            drawerLayout.closeDrawer(GravityCompat.START)
         }
 
         viewModel.categories.observe(this, Observer {
             adapter.submitList(it)
         })
         viewModel.fillDb()
+    }
+
+    override fun onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+            drawerLayout.closeDrawer(GravityCompat.START)
+        } else {
+            super.onBackPressed()
+        }
     }
 
     private fun setupActionBar() {
@@ -101,6 +110,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 RecipeFragment.ARGUMENT_TITLE to category.title
             )
         )
-        drawerLayout.closeDrawers()
+        drawerLayout.closeDrawer(GravityCompat.START)
     }
 }
