@@ -109,6 +109,7 @@
                 glideUrl="@{viewModel.recipe.img}"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_240"
+                android:layout_marginTop="@dimen/dp_8"
                 android:contentDescription="@string/app_name"
                 android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
