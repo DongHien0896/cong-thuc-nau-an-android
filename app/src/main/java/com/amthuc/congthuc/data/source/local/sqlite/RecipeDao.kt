@@ -30,4 +30,7 @@ interface RecipeDao {
 
     @Query("SELECT * FROM recipe WHERE idCategory = :idCategory")
     fun getRecipesByCategory(idCategory: Int): Single<List<Recipe>>
+
+    @Query("SELECT * FROM recipe WHERE isFavorite = 1")
+    fun getFavorite(): Single<List<Recipe>>
 }

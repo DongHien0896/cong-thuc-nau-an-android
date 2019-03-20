@@ -22,4 +22,6 @@ class RecipeRepository(private val local: RecipeDataSource.Local) : RecipeDataSo
 
     override fun getRecipesByCategory(idCategory: Int): Single<List<Recipe>> =
         local.getRecipesByCategory(idCategory)
+
+    override fun getFavorite(): Single<List<Recipe>> = local.getFavorite()
 }

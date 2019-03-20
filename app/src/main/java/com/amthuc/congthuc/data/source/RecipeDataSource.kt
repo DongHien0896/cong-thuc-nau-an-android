@@ -29,5 +29,7 @@ interface RecipeDataSource {
         fun getRecipe(id: Int): Single<Recipe>
 
         fun getRecipesByCategory(idCategory: Int): Single<List<Recipe>>
+
+        fun getFavorite(): Single<List<Recipe>>
     }
 }

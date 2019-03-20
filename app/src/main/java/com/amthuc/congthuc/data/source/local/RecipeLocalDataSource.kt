@@ -23,4 +23,6 @@ class RecipeLocalDataSource(private val dao: RecipeDao) : RecipeDataSource.Local
 
     override fun getRecipesByCategory(idCategory: Int): Single<List<Recipe>> =
         dao.getRecipesByCategory(idCategory)
+
+    override fun getFavorite(): Single<List<Recipe>> = dao.getFavorite()
 }

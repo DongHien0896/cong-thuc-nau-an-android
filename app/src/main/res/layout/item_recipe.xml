@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="item"
             type="com.amthuc.congthuc.data.model.Recipe" />
@@ -40,8 +42,9 @@
             android:background="@null"
             android:contentDescription="@string/app_name"
             android:padding="@dimen/dp_16"
-            android:src="@drawable/ic_favorite_border_black_24dp"
+            android:src="@drawable/ic_favorite_black_24dp"
             android:tint="@android:color/white"
+            android:visibility="@{item.isFavorite ? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

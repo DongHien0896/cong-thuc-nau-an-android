@@ -29,6 +29,7 @@ class RecipeDetailFragment : BaseFragment<FragmentRecipeDetailBinding, RecipeDet
         val recipe = safeArgs.ARGUMENTRECIPE
 
         viewModel.recipe.value = recipe
+        viewModel.updateRecipe()
 
         val adapterIngredient = IngredientAdapter()
         recycler_ingredient.apply {

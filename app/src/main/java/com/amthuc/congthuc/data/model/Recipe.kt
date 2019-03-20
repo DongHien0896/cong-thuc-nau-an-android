@@ -25,5 +25,6 @@ data class Recipe(
     var time: Int = 30,
     var serving: Int = 4,
     @SerializedName("components") var ingredients: List<Ingredient>? = null,
-    @SerializedName("cook_steps") var steps: List<Step>? = null
+    @SerializedName("cook_steps") var steps: List<Step>? = null,
+    var isFavorite: Boolean? = false
 ) : Parcelable

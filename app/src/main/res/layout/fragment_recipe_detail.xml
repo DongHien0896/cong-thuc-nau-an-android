@@ -167,8 +167,9 @@
                 android:background="@drawable/bg_circle_transparent"
                 android:contentDescription="@string/app_name"
                 android:padding="@dimen/dp_8"
-                android:src="@drawable/ic_favorite_border_black_24dp"
+                android:src="@{viewModel.favorite ? @drawable/ic_favorite_black_24dp : @drawable/ic_favorite_border_black_24dp}"
                 android:tint="@android:color/white"
+                android:onClick="@{() -> viewModel.checkFavorite()}"
                 app:layout_constraintBottom_toTopOf="@+id/textIngredient2"
                 app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
