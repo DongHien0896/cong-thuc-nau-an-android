@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.amthuc.congthuc.R
 import com.amthuc.congthuc.databinding.FragmentRecipeDetailBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
-import com.amthuc.congthuc.ui.screen.recipe.IngredientAdapter
-import com.amthuc.congthuc.ui.screen.recipe.StepAdapter
 import kotlinx.android.synthetic.main.fragment_recipe_detail.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

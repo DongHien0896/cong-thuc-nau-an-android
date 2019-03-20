@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/categories_dest"
         android:name="com.amthuc.congthuc.ui.screen.categories.CategoriesFragment"
-        android:label="Categories"
+        android:label="@string/title_categories"
         tools:layout="@layout/fragment_categories">
         <action
             android:id="@+id/action_categories_dest_to_recipe_dest"
@@ -46,7 +46,7 @@
     <fragment
         android:id="@+id/favorite_dest"
         android:name="com.amthuc.congthuc.ui.screen.favorite.FavoriteFragment"
-        android:label="Favorite"
+        android:label="@string/title_favorite"
         tools:layout="@layout/fragment_favorite">
         <action
             android:id="@+id/action_favorite_dest_to_recipe_detail_dest"
@@ -55,7 +55,7 @@
     <fragment
         android:id="@+id/search_dest"
         android:name="com.amthuc.congthuc.ui.screen.search.SearchFragment"
-        android:label="Search"
+        android:label="@string/title_search"
         tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_search_dest_to_recipe_detail_dest"

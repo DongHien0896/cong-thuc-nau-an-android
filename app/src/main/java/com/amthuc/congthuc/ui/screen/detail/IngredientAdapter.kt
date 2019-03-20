@@ -1,4 +1,4 @@
-package com.amthuc.congthuc.ui.screen.recipe
+package com.amthuc.congthuc.ui.screen.detail
 
 import androidx.recyclerview.widget.DiffUtil
 import com.amthuc.congthuc.R
