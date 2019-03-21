@@ -95,11 +95,12 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     private fun openCategoryDetail(category: Category) {
+        val title = category.title + " (" + category.recipes.toString() + " món)"
         findNavController(R.id.nav_host_fragment).navigate(
             R.id.recipe_dest,
             bundleOf(
                 RecipeFragment.ARGUMENT_CATEGORY to category,
-                RecipeFragment.ARGUMENT_TITLE to category.title
+                RecipeFragment.ARGUMENT_TITLE to title
             )
         )
         drawerLayout.closeDrawer(GravityCompat.START)
