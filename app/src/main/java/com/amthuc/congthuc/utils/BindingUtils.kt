@@ -4,10 +4,10 @@ import android.content.res.ColorStateList
 import android.net.Uri
 import android.os.Build
 import android.os.SystemClock
+import android.text.Html
 import android.text.TextUtils
 import android.view.View
 import android.webkit.WebView
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.DrawableRes
@@ -127,4 +127,17 @@ fun View?.customBackground(color: Int?) {
 @BindingAdapter("onEditorActionListener")
 fun TextView.onEditorAction(listener: TextView.OnEditorActionListener) {
     setOnEditorActionListener(listener)
+}
+
+@BindingAdapter("textQuantity", "textUnit", "textName")
+fun TextView.setTextHtml(quantity: String, unit: String, name: String) {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        var x = Html.fromHtml(quantity, Html.FROM_HTML_MODE_COMPACT).toString()
+        x = "$x ($unit) $name"
+        this.text = x
+    } else {
+        var x = Html.fromHtml(quantity).toString()
+        x = "$x ($unit) $name"
+        this.text = x
+    }
 }
