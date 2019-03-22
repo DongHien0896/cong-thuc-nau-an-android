@@ -53,7 +53,12 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
             drawerLayout.closeDrawer(GravityCompat.START)
         }
 
-        findViewById<View>(R.id.nav_search).setOnClickListener {
+//        findViewById<View>(R.id.nav_search).setOnClickListener {
+//            findNavController(R.id.nav_host_fragment).navigate(R.id.search_dest)
+//            drawerLayout.closeDrawer(GravityCompat.START)
+//        }
+
+        nav_search.setOnClickListener {
             findNavController(R.id.nav_host_fragment).navigate(R.id.search_dest)
             drawerLayout.closeDrawer(GravityCompat.START)
         }

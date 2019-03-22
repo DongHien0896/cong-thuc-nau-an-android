@@ -11,7 +11,7 @@
         android:label="@string/title_categories"
         tools:layout="@layout/fragment_categories">
         <action
-            android:id="@+id/action_categories_dest_to_recipe_dest"
+            android:id="@+id/to_recipe"
             app:destination="@id/recipe_dest" />
     </fragment>
     <fragment
@@ -27,7 +27,7 @@
             android:defaultValue="Recipes"
             app:argType="string" />
         <action
-            android:id="@+id/action_recipe_dest_to_recipe_detail_dest"
+            android:id="@+id/to_recipe_detail"
             app:destination="@id/recipe_detail_dest" />
     </fragment>
     <fragment
@@ -49,7 +49,7 @@
         android:label="@string/title_favorite"
         tools:layout="@layout/fragment_favorite">
         <action
-            android:id="@+id/action_favorite_dest_to_recipe_detail_dest"
+            android:id="@+id/to_recipe_detail"
             app:destination="@id/recipe_detail_dest" />
     </fragment>
     <fragment
@@ -58,7 +58,7 @@
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search">
         <action
-            android:id="@+id/action_search_dest_to_recipe_detail_dest"
+            android:id="@+id/to_recipe_detail"
             app:destination="@id/recipe_detail_dest" />
     </fragment>
 </navigation>
