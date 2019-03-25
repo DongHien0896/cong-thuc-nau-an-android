@@ -12,7 +12,11 @@
         tools:layout="@layout/fragment_categories">
         <action
             android:id="@+id/to_recipe"
-            app:destination="@id/recipe_dest" />
+            app:destination="@id/recipe_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/recipe_dest"
@@ -28,7 +32,11 @@
             app:argType="string" />
         <action
             android:id="@+id/to_recipe_detail"
-            app:destination="@id/recipe_detail_dest" />
+            app:destination="@id/recipe_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left_2"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/recipe_detail_dest"
@@ -42,6 +50,9 @@
             android:name="ARGUMENT_TITLE"
             android:defaultValue="Detail"
             app:argType="string" />
+        <argument
+            android:name="ARGUMENT_POSITION"
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/favorite_dest"
@@ -50,7 +61,11 @@
         tools:layout="@layout/fragment_favorite">
         <action
             android:id="@+id/to_recipe_detail"
-            app:destination="@id/recipe_detail_dest" />
+            app:destination="@id/recipe_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left_2"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/search_dest"
@@ -59,6 +74,10 @@
         tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/to_recipe_detail"
-            app:destination="@id/recipe_detail_dest" />
+            app:destination="@id/recipe_detail_dest"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left_2"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>

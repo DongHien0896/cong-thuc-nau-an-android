@@ -1,7 +1,10 @@
 package com.amthuc.congthuc.ui.screen.favorite
 
 import android.os.Bundle
+import android.widget.ImageView
+import androidx.core.view.ViewCompat
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.amthuc.congthuc.R
@@ -9,6 +12,7 @@ import com.amthuc.congthuc.data.model.Recipe
 import com.amthuc.congthuc.databinding.FragmentFavoriteBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
 import com.amthuc.congthuc.ui.screen.recipe.RecipeAdapter
+import com.amthuc.congthuc.ui.screen.recipe.RecipeFragmentDirections
 import com.amthuc.congthuc.utils.createNavOptions
 import kotlinx.android.synthetic.main.fragment_favorite.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -35,7 +39,21 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
         viewModel.getData()
     }
 
-    private fun openRecipeDetail(recipe: Recipe) {
+    private fun openRecipeDetail(recipe: Recipe, image: ImageView, position: Int) {
+        val extras = FragmentNavigator.Extras.Builder().addSharedElement(
+            image,
+            ViewCompat.getTransitionName(image)!!
+        ).build()
+
+        findNavController().navigate(
+            RecipeFragmentDirections.toRecipeDetail(
+                recipe,
+                recipe.name!!,
+                position
+            ), extras
+        )
+
+
 //        findNavController().navigate(
 //            R.id.recipe_detail_dest,
 //            bundleOf(
@@ -45,9 +63,9 @@ class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel
 //            createNavOptions()
 //        )
 
-        findNavController().navigate(
-            FavoriteFragmentDirections.toRecipeDetail(recipe, recipe.name!!),
-            createNavOptions()
-        )
+//        findNavController().navigate(
+//            FavoriteFragmentDirections.toRecipeDetail(recipe, recipe.name!!),
+//            createNavOptions()
+//        )
     }
 }

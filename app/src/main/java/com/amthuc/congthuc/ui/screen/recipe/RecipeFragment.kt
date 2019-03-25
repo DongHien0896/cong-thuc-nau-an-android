@@ -1,8 +1,12 @@
 package com.amthuc.congthuc.ui.screen.recipe
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.OnBackPressedCallback
+import androidx.core.os.bundleOf
+import androidx.core.view.ViewCompat
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,7 +14,8 @@ import com.amthuc.congthuc.R
 import com.amthuc.congthuc.data.model.Recipe
 import com.amthuc.congthuc.databinding.FragmentRecipeBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
-import com.amthuc.congthuc.utils.createNavOptions
+import com.amthuc.congthuc.ui.screen.detail.RecipeDetailFragment
+import com.amthuc.congthuc.utils.createNavOptions2
 import kotlinx.android.synthetic.main.fragment_recipe.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -52,7 +57,21 @@ class RecipeFragment : BaseFragment<FragmentRecipeBinding, RecipeViewModel>() {
         }
     }
 
-    private fun openRecipeDetail(recipe: Recipe) {
+    private fun openRecipeDetail(recipe: Recipe, image: ImageView, position: Int) {
+
+        val extras = FragmentNavigator.Extras.Builder().addSharedElement(
+            image,
+            ViewCompat.getTransitionName(image)!!
+        ).build()
+
+        findNavController().navigate(
+            RecipeFragmentDirections.toRecipeDetail(
+                recipe,
+                recipe.name!!,
+                position
+            ), extras
+        )
+
 //        findNavController().navigate(
 //            R.id.recipe_detail_dest,
 //            bundleOf(
@@ -61,9 +80,15 @@ class RecipeFragment : BaseFragment<FragmentRecipeBinding, RecipeViewModel>() {
 //            ),
 //            createNavOptions()
 //        )
-        findNavController().navigate(
-            RecipeFragmentDirections.toRecipeDetail(recipe, recipe.name!!),
-            createNavOptions()
-        )
+
+
+//        findNavController().navigate(
+//            R.id.recipe_detail_dest, bundleOf(
+//                RecipeDetailFragment.ARGUMENT_RECIPE to recipe,
+//                RecipeDetailFragment.ARGUMENT_TITLE to recipe.name,
+//                RecipeDetailFragment.ARGUMENT_POSITION to position
+//            ), createNavOptions2(),
+//            extras
+//        )
     }
 }

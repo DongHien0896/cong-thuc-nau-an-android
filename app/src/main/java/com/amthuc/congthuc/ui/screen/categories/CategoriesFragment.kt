@@ -1,13 +1,16 @@
 package com.amthuc.congthuc.ui.screen.categories
 
 import android.os.Bundle
+import android.widget.TextView
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.amthuc.congthuc.R
 import com.amthuc.congthuc.data.model.Category
 import com.amthuc.congthuc.databinding.FragmentCategoriesBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
+import com.amthuc.congthuc.ui.screen.recipe.RecipeFragment
 import com.amthuc.congthuc.ui.widgets.SpacesItemDecoration
 import com.amthuc.congthuc.utils.Constants
 import com.amthuc.congthuc.utils.createNavOptions
@@ -51,8 +54,6 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding, CategoriesVie
 //        )
 
         findNavController().navigate(
-            CategoriesFragmentDirections.toRecipe(category, title),
-            createNavOptions()
-        )
+            CategoriesFragmentDirections.toRecipe(category, title))
     }
 }

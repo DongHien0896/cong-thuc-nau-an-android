@@ -11,3 +11,12 @@ fun createNavOptions() = navOptions {
         popExit = R.anim.slide_out_right
     }
 }
+
+fun createNavOptions2() = navOptions {
+    anim {
+        enter = R.anim.slide_in_right
+        exit = R.anim.slide_out_left_2
+        popEnter = R.anim.slide_in_left
+        popExit = R.anim.slide_out_right
+    }
+}

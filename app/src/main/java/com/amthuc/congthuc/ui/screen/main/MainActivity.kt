@@ -1,6 +1,7 @@
 package com.amthuc.congthuc.ui.screen.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.core.os.bundleOf
@@ -51,6 +52,13 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         findViewById<View>(R.id.nav_favorite).setOnClickListener {
             findNavController(R.id.nav_host_fragment).navigate(R.id.favorite_dest)
             drawerLayout.closeDrawer(GravityCompat.START)
+        }
+
+
+        // dynamic title toolbar base on destination changed listener
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            Log.d("test", "$arguments")
+            Log.d("test", navController.currentDestination?.label.toString())
         }
 
 //        findViewById<View>(R.id.nav_search).setOnClickListener {

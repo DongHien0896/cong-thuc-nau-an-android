@@ -105,7 +105,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/iamgeRecipe"
+                android:id="@+id/imageRecipe"
                 glideUrl="@{viewModel.recipe.img}"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/dp_240"
@@ -126,7 +126,7 @@
                 android:textAllCaps="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/iamgeRecipe" />
+                app:layout_constraintTop_toBottomOf="@+id/imageRecipe" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_ingredient"
