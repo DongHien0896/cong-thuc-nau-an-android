@@ -1,7 +1,6 @@
 package com.amthuc.congthuc.ui.screen.categories
 
 import android.os.Bundle
-import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -9,7 +8,6 @@ import com.amthuc.congthuc.R
 import com.amthuc.congthuc.data.model.Category
 import com.amthuc.congthuc.databinding.FragmentCategoriesBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
-import com.amthuc.congthuc.ui.screen.recipe.RecipeFragment
 import com.amthuc.congthuc.ui.widgets.SpacesItemDecoration
 import com.amthuc.congthuc.utils.Constants
 import com.amthuc.congthuc.utils.createNavOptions
@@ -43,12 +41,17 @@ class CategoriesFragment : BaseFragment<FragmentCategoriesBinding, CategoriesVie
 
     private fun openCategoryDetail(category: Category) {
         val title = category.title + " (" + category.recipes.toString() + " món)"
+//        findNavController().navigate(
+//            R.id.recipe_dest,
+//            bundleOf(
+//                RecipeFragment.ARGUMENT_CATEGORY to category,
+//                RecipeFragment.ARGUMENT_TITLE to title
+//            ),
+//            createNavOptions()
+//        )
+
         findNavController().navigate(
-            R.id.recipe_dest,
-            bundleOf(
-                RecipeFragment.ARGUMENT_CATEGORY to category,
-                RecipeFragment.ARGUMENT_TITLE to title
-            ),
+            CategoriesFragmentDirections.toRecipe(category, title),
             createNavOptions()
         )
     }

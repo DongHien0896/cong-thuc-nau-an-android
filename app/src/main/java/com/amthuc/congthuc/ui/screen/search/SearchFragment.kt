@@ -1,7 +1,6 @@
 package com.amthuc.congthuc.ui.screen.search
 
 import android.os.Bundle
-import androidx.core.os.bundleOf
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,7 +8,6 @@ import com.amthuc.congthuc.R
 import com.amthuc.congthuc.data.model.Recipe
 import com.amthuc.congthuc.databinding.FragmentSearchBinding
 import com.amthuc.congthuc.ui.base.BaseFragment
-import com.amthuc.congthuc.ui.screen.detail.RecipeDetailFragment
 import com.amthuc.congthuc.ui.screen.main.MainViewModel
 import com.amthuc.congthuc.ui.screen.recipe.RecipeAdapter
 import com.amthuc.congthuc.utils.createNavOptions
@@ -52,12 +50,17 @@ class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>() {
     }
 
     private fun openRecipeDetail(recipe: Recipe) {
+//        findNavController().navigate(
+//            R.id.recipe_detail_dest,
+//            bundleOf(
+//                RecipeDetailFragment.ARGUMENT_RECIPE to recipe,
+//                RecipeDetailFragment.ARGUMENT_TITLE to recipe.name
+//            ),
+//            createNavOptions()
+//        )
+
         findNavController().navigate(
-            R.id.recipe_detail_dest,
-            bundleOf(
-                RecipeDetailFragment.ARGUMENT_RECIPE to recipe,
-                RecipeDetailFragment.ARGUMENT_TITLE to recipe.name
-            ),
+            SearchFragmentDirections.toRecipeDetail(recipe, recipe.name!!),
             createNavOptions()
         )
     }
